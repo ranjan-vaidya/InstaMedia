@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";  // Updated import
+import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -11,17 +11,13 @@ const options = {
   timeout: 5000,
   transition: transitions.SCALE,
 };
-
-// Create the root container using createRoot
-const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container);
-
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <AlertProvider template={AlertTemplate} {...options}>
         <App />
       </AlertProvider>
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
