@@ -2,7 +2,7 @@ const nodeMailer = require("nodemailer");
 
 exports.sendEmail = async (options) => {
     var transporter = nodeMailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
+        host: "smtp.mailtrap.io",
         port: 2525,
         auth: {
           user: "ed642bb3becdca",
